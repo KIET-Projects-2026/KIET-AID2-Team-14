@@ -11,14 +11,21 @@ __pycache__/
 # ML models & datasets
 *.h5
 *.pkl
-plantvillage dataset/
+plantvillage_dataset/
 
 # Flask
 instance/
 .env
+static/uploads/
 
 # Database
 *.db
+
+# Logs
+*.log
+
+# Jupyter
+.ipynb_checkpoints/
 
 # IDE / OS
 .vscode/
