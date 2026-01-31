@@ -1,0 +1,178 @@
+/* ================= GLOBAL ================= */
+body {
+    margin: 0;
+    padding: 0;
+    background: #ffffff;
+    font-family: "Segoe UI", Tahoma, sans-serif;
+}
+
+.content,
+.main,
+.page {
+    background: transparent;
+}
+
+/* ================= HERO SECTION ================= */
+.home-hero {
+    min-height: 90vh;
+    background: url("https://images.unsplash.com/photo-1501004318641-b39e6451bec6")
+        center / cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 20px;
+    position: relative;
+}
+
+/* Dark overlay for text visibility */
+.home-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.35);
+}
+
+.home-hero > * {
+    position: relative;
+    z-index: 1;
+}
+
+/* ================= GLASS CARD ================= */
+.hero-glass {
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-radius: 24px;
+    max-width: 900px;
+    width: 100%;
+    padding: 70px 60px;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.25);
+    text-align: center;
+    animation: fadeUp 1.2s ease;
+}
+
+/* ================= TEXT ================= */
+.hero-glass h1 {
+    font-size: 3.2rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 20px;
+    text-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+.hero-glass p {
+    font-size: 1.15rem;
+    color: #f1f1f1;
+    line-height: 1.7;
+    margin-bottom: 40px;
+}
+
+/* ================= BUTTONS ================= */
+.hero-buttons {
+    display: flex;
+    gap: 18px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 14px 36px;
+    border-radius: 999px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Primary */
+.btn.primary {
+    background: linear-gradient(135deg, #43a047, #66bb6a);
+    color: #ffffff;
+    box-shadow: 0 10px 25px rgba(67, 160, 71, 0.35);
+}
+
+.btn.primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 16px 35px rgba(67, 160, 71, 0.45);
+}
+
+/* Outline */
+.btn.outline {
+    border: 2px solid #ffffff;
+    color: #ffffff;
+}
+
+.btn.outline:hover {
+    background: #ffffff;
+    color: #2e7d32;
+}
+
+/* ================= INFO SECTION ================= */
+.info-section {
+    padding: 80px 10%;
+    background: #f6f9f7;
+    text-align: center;
+}
+
+.info-section h2 {
+    font-size: 2.2rem;
+    margin-bottom: 50px;
+    color: #2e7d32;
+}
+
+/* ================= CARDS ================= */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.card {
+    background: #ffffff;
+    padding: 35px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    transition: 0.4s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+}
+
+.card h3 {
+    margin-bottom: 15px;
+    color: #2e7d32;
+}
+
+/* ================= ICONS ================= */
+.card-icon {
+    font-size: 40px;
+    color: #43a047;
+    margin-bottom: 15px;
+}
+
+/* ================= ANIMATION ================= */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+    .hero-glass {
+        padding: 50px 30px;
+    }
+
+    .hero-glass h1 {
+        font-size: 2.2rem;
+    }
+}

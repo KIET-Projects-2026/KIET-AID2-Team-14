@@ -1,0 +1,156 @@
+/* ================= GLOBAL RESET ================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+/* ================= BODY ================= */
+body {
+    background: #ffffff; /* plain white background */
+    min-height: 100vh;
+}
+
+/* ================= RESULT SECTION ================= */
+.result-hero {
+    min-height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: transparent; /* ❌ removed green gradient */
+    padding: 40px;
+}
+
+/* ================= RESULT CARD ================= */
+.result-card {
+    background: rgba(46, 125, 50, 0.9); /* card-only green */
+    border-radius: 22px;
+    padding: 30px;
+    width: 420px;
+    text-align: center;
+    color: #ffffff;
+    box-shadow: 0 25px 45px rgba(0,0,0,0.3);
+    transform: scale(0.85);
+    opacity: 0;
+    animation: appear 0.8s ease forwards;
+}
+
+@keyframes appear {
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* ================= TITLE ================= */
+.result-title {
+    font-size: 26px;
+    margin-bottom: 15px;
+}
+
+/* ================= IMAGE ================= */
+.image-wrapper {
+    margin: 15px 0;
+}
+
+.result-img {
+    width: 220px;
+    border-radius: 20px;
+    display: block;
+    margin: 0 auto;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+}
+
+/* Healthy image */
+.result-img.healthy {
+    border: 4px solid #43a047;
+}
+
+/* Diseased image */
+.result-img.diseased {
+    border: 4px solid #e53935;
+}
+
+/* ================= DISEASE NAME ================= */
+.disease-name {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+/* ================= STATUS BADGE ================= */
+.status-badge {
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 700;
+    padding: 8px 22px;
+    border-radius: 25px;
+    margin: 10px 0;
+}
+
+/* Healthy */
+.status-badge.healthy {
+    background: #e8f5e9;
+    color: #1b5e20;
+    border: 2px solid #43a047;
+}
+
+/* Diseased */
+.status-badge.diseased {
+    background: #ffebee;
+    color: #b71c1c;
+    border: 2px solid #e53935;
+}
+
+/* ================= CONFIDENCE CIRCLE ================= */
+.confidence-box {
+    position: relative;
+    width: 120px;
+    margin: 20px auto;
+}
+
+.progress-ring circle {
+    fill: none;
+    stroke-width: 10;
+    stroke-linecap: round;
+}
+
+.progress-ring .bg {
+    stroke: rgba(255,255,255,0.3);
+}
+
+.progress-ring .progress {
+    stroke: #00e676;
+    stroke-dasharray: 327;
+    transition: stroke-dashoffset 1.3s ease;
+}
+
+.confidence-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.confidence-text span {
+    display: block;
+    font-size: 12px;
+}
+
+/* ================= BUTTON ================= */
+.try-btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 28px;
+    background: #00c853;
+    color: #ffffff;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.try-btn:hover {
+    background: #00e676;
+}

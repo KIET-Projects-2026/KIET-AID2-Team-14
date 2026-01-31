@@ -1,0 +1,27 @@
+# Virtual environments
+mynv/
+venv/
+env/
+tfenv/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# ML models & datasets
+*.h5
+*.pkl
+plantvillage dataset/
+
+# Flask
+instance/
+.env
+
+# Database
+*.db
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+
+{% block title %}About | PlantCare{% endblock %}
+
+<!-- ================= ABOUT PAGE CSS ================= -->
+{% block styles %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/about.css') }}">
+{% endblock %}
+
+{% block content %}
+
+<section class="about-hero">
+    <h1>Plant Disease Detection System</h1>
+    <p>
+        An AI-powered solution for early detection of plant diseases using leaf images
+    </p>
+</section>
+
+<div class="about-container">
+
+    <div class="about-card">
+        <h2>📌 Project Overview</h2>
+        <p>
+            This project uses <strong>Deep Learning</strong> and a
+            <strong>Convolutional Neural Network (CNN)</strong> trained on the
+            <strong>PlantVillage dataset</strong> to accurately identify plant diseases.
+        </p>
+    </div>
+
+    <div class="about-card">
+        <h2>🎯 Objectives</h2>
+        <ul>
+            <li>Early detection of plant diseases</li>
+            <li>Reduce crop loss</li>
+            <li>Provide treatment recommendations</li>
+            <li>Support farmers using AI</li>
+        </ul>
+    </div>
+
+    <div class="about-card">
+        <h2>⚙️ Technologies Used</h2>
+        <div class="tech-grid">
+            <div class="tech-item">🐍 Python</div>
+            <div class="tech-item">🧠 TensorFlow</div>
+            <div class="tech-item">🌐 Flask</div>
+            <div class="tech-item">🎨 HTML & CSS</div>
+            <div class="tech-item">🌿 PlantVillage Dataset</div>
+        </div>
+    </div>
+
+    <div class="about-card">
+        <h2>🔍 How It Works</h2>
+        <ol>
+            <li>User uploads a plant leaf image</li>
+            <li>The image is processed by a CNN model</li>
+            <li>The disease is predicted</li>
+            <li>Results are displayed with confidence score</li>
+        </ol>
+    </div>
+
+</div>
+
+{% endblock %}

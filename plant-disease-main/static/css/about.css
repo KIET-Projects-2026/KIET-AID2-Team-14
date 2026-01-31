@@ -1,0 +1,168 @@
+/* ================= RESET PAGE BACKGROUND ================= */
+body {
+    background: #f4f8f5;
+}
+
+.content {
+    background: linear-gradient(
+        135deg,
+        #f1f8e9,
+        #e8f5e9,
+        #ffffff
+    );
+}
+
+/* ================= ABOUT HERO ================= */
+.about-hero {
+    text-align: center;
+    padding: 60px 20px 40px;
+    max-width: 900px;
+    margin: auto;
+    animation: heroReveal 1s ease forwards;
+}
+
+.about-hero h1 {
+    font-size: 38px;
+    color: #1b5e20;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.about-hero p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #555;
+}
+
+/* ================= ABOUT CONTAINER ================= */
+.about-container {
+    max-width: 1100px;
+    margin: 40px auto 80px;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+/* ================= ABOUT CARD ================= */
+.about-card {
+    background: #ffffff;
+    padding: 30px 25px;
+    border-radius: 22px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+
+    opacity: 0;
+    animation: cardReveal 0.9s ease forwards;
+}
+
+/* Staggered animation */
+.about-card:nth-child(1) { animation-delay: 0.15s; }
+.about-card:nth-child(2) { animation-delay: 0.30s; }
+.about-card:nth-child(3) { animation-delay: 0.45s; }
+.about-card:nth-child(4) { animation-delay: 0.60s; }
+
+.about-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.18);
+}
+
+.about-card h2 {
+    color: #2e7d32;
+    margin-bottom: 15px;
+    font-size: 22px;
+}
+
+.about-card p,
+.about-card li {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #444;
+}
+
+/* ================= LISTS ================= */
+.about-card ul,
+.about-card ol {
+    padding-left: 20px;
+}
+
+/* ================= TECHNOLOGIES GRID ================= */
+.tech-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 12px;
+    margin-top: 15px;
+}
+
+.tech-item {
+    background: #e8f5e9;
+    padding: 10px 14px;
+    border-radius: 20px;
+    text-align: center;
+    font-weight: 600;
+    color: #1b5e20;
+    position: relative;
+    overflow: hidden;
+    transition: 0.3s ease;
+}
+
+.tech-item::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(255,255,255,0.35);
+    transform: translateX(-100%);
+    transition: 0.4s ease;
+}
+
+.tech-item:hover::after {
+    transform: translateX(0);
+}
+
+.tech-item:hover {
+    background: #c8e6c9;
+}
+
+/* ================= ANIMATIONS ================= */
+@keyframes heroReveal {
+    from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes cardReveal {
+    from {
+        opacity: 0;
+        transform: translateY(35px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+    .about-hero h1 {
+        font-size: 30px;
+    }
+
+    .about-hero p {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .about-hero h1 {
+        font-size: 26px;
+    }
+
+    .about-hero p {
+        font-size: 14px;
+    }
+}

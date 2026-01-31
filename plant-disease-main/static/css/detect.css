@@ -1,0 +1,224 @@
+/* ================= GLOBAL BACKGROUND FIX ================= */
+body {
+    margin: 0;
+    padding: 0;
+    background: #ffffff;
+}
+
+.content,
+.main,
+.page {
+    background: transparent;
+}
+
+/* ================= DETECT HERO ================= */
+.detect-hero {
+    min-height: calc(100vh - 90px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 70px 20px;
+
+    background: linear-gradient(
+        135deg,
+        #e8f5e9,
+        #f1f8e9,
+        #ffffff
+    );
+    background-size: 200% 200%;
+    animation: gradientFlow 10s ease infinite;
+}
+
+@keyframes gradientFlow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* ================= DETECT CARD ================= */
+.detect-card {
+    position: relative;
+    width: 100%;
+    max-width: 470px;
+    padding: 40px 32px;
+    border-radius: 26px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.97);
+
+    box-shadow:
+        0 18px 40px rgba(0, 0, 0, 0.12),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.6);
+
+    animation: fadeUp 0.9s ease;
+}
+
+.detect-card::before {
+    content: "";
+    position: absolute;
+    inset: -14px;
+    border-radius: 30px;
+    background: linear-gradient(
+        135deg,
+        rgba(129, 199, 132, 0.4),
+        rgba(200, 230, 201, 0.4)
+    );
+    z-index: -1;
+    filter: blur(25px);
+    opacity: 0.6;
+}
+
+/* ================= HEADER ================= */
+.detect-icon {
+    font-size: 58px;
+    margin-bottom: 14px;
+}
+
+.detect-card h2 {
+    font-size: 30px;
+    color: #1b5e20;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.detect-card p {
+    font-size: 15.5px;
+    color: #555;
+    margin-bottom: 26px;
+    line-height: 1.6;
+}
+
+/* ================= UPLOAD BOX ================= */
+.upload-box {
+    display: block;
+    border: 2px dashed #81c784;
+    border-radius: 20px;
+    padding: 36px 22px;
+    cursor: pointer;
+    margin-bottom: 24px;
+
+    background: #f9fdf9;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.upload-box:hover {
+    border-color: #66bb6a;
+    background: #eef7ee;
+    transform: translateY(-3px);
+}
+
+/* Upload content */
+.upload-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.upload-icon {
+    font-size: 42px;
+    color: #43a047;
+}
+
+.upload-text {
+    font-size: 15.5px;
+    color: #2e7d32;
+    font-weight: 600;
+}
+
+.upload-text small {
+    font-size: 13px;
+    color: #666;
+}
+
+/* Hide file input */
+.upload-box input {
+    display: none;
+}
+
+/* ================= IMAGE PREVIEW ================= */
+#imagePreview {
+    width: 100%;
+    max-height: 240px;
+    object-fit: contain;
+    border-radius: 14px;
+    display: none;
+
+    animation: fadeIn 0.4s ease;
+}
+
+/* ================= BUTTON ================= */
+.detect-btn {
+    width: 100%;
+    font-size: 16.5px;
+    padding: 13px 0;
+    border: none;
+    border-radius: 16px;
+
+    background: linear-gradient(135deg, #66bb6a, #43a047);
+    color: #ffffff;
+    cursor: pointer;
+    font-weight: 600;
+
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.detect-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(67, 160, 71, 0.35);
+}
+
+/* ================= ANIMATIONS ================= */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.96);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 480px) {
+    .detect-card {
+        padding: 30px 22px;
+    }
+
+    .detect-card h2 {
+        font-size: 24px;
+    }
+
+    .upload-box {
+        padding: 30px 16px;
+    }
+
+    .upload-icon {
+        font-size: 36px;
+    }
+
+    .detect-btn {
+        font-size: 15px;
+        padding: 11px 0;
+    }
+}
+.file-text {
+    font-size: 15px;
+    color: #2e7d32;
+    font-weight: 600;
+    text-align: center;
+    line-height: 1.6;
+    animation: fadeIn 0.4s ease;
+}

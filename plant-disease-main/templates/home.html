@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+
+{% block title %}Home | PlantCare{% endblock %}
+
+{% block styles %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+{% endblock %}
+
+{% block content %}
+
+<!-- ================= HERO SECTION ================= -->
+<section class="home-hero">
+    <div class="hero-glass">
+        <h1>
+            <i class="fa-solid fa-seedling"></i>
+            AI-Powered Plant Disease Detection
+        </h1>
+
+        <p>
+            Smart AI technology to identify plant diseases instantly and help farmers
+            protect crops with confidence.
+        </p>
+
+        <div class="hero-buttons">
+            <a href="{{ url_for('detect') }}" class="btn primary">
+                <i class="fa-solid fa-microscope"></i> Detect Disease
+            </a>
+            <a href="#how-it-works" class="btn outline">
+                <i class="fa-solid fa-circle-info"></i> How It Works
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- ================= HOW IT WORKS ================= -->
+<section class="info-section" id="how-it-works">
+    <h2>
+        <i class="fa-solid fa-brain"></i> How It Works
+    </h2>
+
+    <div class="cards">
+        <div class="card">
+            <i class="fa-solid fa-upload card-icon"></i>
+            <h3>Upload Image</h3>
+            <p>Upload a clear plant leaf image.</p>
+        </div>
+
+        <div class="card">
+            <i class="fa-solid fa-robot card-icon"></i>
+            <h3>AI Analysis</h3>
+            <p>Our deep learning model analyzes the uploaded leaf image.</p>
+        </div>
+
+        <div class="card">
+            <i class="fa-solid fa-chart-line card-icon"></i>
+            <h3>Get Result</h3>
+            <p>Instant disease detection result with treatment suggestions.</p>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

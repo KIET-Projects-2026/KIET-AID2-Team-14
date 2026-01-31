@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+
+{% block title %}Detect | PlantCare{% endblock %}
+
+{% block styles %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/detect.css') }}">
+{% endblock %}
+
+{% block content %}
+<section class="detect-hero">
+    <div class="detect-card">
+
+        <div class="detect-icon"></div>
+
+        <h2>Plant Disease Detection</h2>
+        <p>Upload a leaf image to predict disease instantly</p>
+
+        <form method="POST" enctype="multipart/form-data">
+
+            <label class="upload-box">
+
+                <!-- TEXT SHOWN AFTER FILE SELECT -->
+                <div class="file-text" id="fileText" style="display:none;"></div>
+
+                <!-- DEFAULT UPLOAD CONTENT -->
+                <div class="upload-content" id="uploadContent">
+                    <div class="upload-icon">📷</div>
+                    <div class="upload-text">
+                        Click or Drag & Drop <br>
+                        <small>(JPG, PNG)</small>
+                    </div>
+                </div>
+
+                <input
+                    type="file"
+                    name="image"
+                    accept="image/*"
+                    required
+                    id="imageInput"
+                >
+            </label>
+
+            <button type="submit" class="detect-btn">
+                 Predict Disease
+            </button>
+        </form>
+
+    </div>
+</section>
+
+<!-- FILE NAME DISPLAY SCRIPT -->
+<script>
+document.getElementById("imageInput").addEventListener("change", function () {
+    const file = this.files[0];
+    if (file) {
+        document.getElementById("uploadContent").style.display = "none";
+
+        const fileText = document.getElementById("fileText");
+        fileText.style.display = "block";
+        fileText.innerHTML = "📄 <strong>Selected file:</strong><br>" + file.name;
+    }
+});
+</script>
+
+{% endblock %}

@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+
+{% block title %}Result | PlantCare{% endblock %}
+
+{% block styles %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/result.css') }}">
+{% endblock %}
+
+{% block content %}
+<section class="result-hero">
+    <div class="result-card">
+
+        <!-- Title -->
+        <h2 class="result-title"> Prediction Result</h2>
+
+        <!-- Uploaded Image -->
+        <div class="image-wrapper">
+            <!-- IMPORTANT: status class added -->
+            <img src="{{ image_path }}"
+                 alt="Uploaded Leaf Image"
+                 class="result-img {{ status|lower }}">
+        </div>
+
+        <!-- Disease Name -->
+        <h3 class="disease-name">
+            {{ class_label }}
+        </h3>
+
+        <!-- Status Badge -->
+        <span class="status-badge {{ status|lower }}">
+            {% if status|lower == "diseased" %}
+                ⚠ Diseased
+            {% else %}
+                ✅ Healthy
+            {% endif %}
+        </span>
+
+        <!-- Confidence Circle -->
+        <div class="confidence-box">
+            <svg class="progress-ring" width="120" height="120">
+                <circle class="bg" cx="60" cy="60" r="52"></circle>
+
+                <!-- confidence expected in % (0–100) -->
+                <circle class="progress"
+                        cx="60"
+                        cy="60"
+                        r="52"
+                        style="stroke-dashoffset: {{ 327 - (confidence|float * 3.27) }}">
+                </circle>
+            </svg>
+
+            <div class="confidence-text">
+                {{ confidence }}%
+                <span>Confidence</span>
+            </div>
+        </div>
+
+        <!-- Recommendation -->
+        <div class="info-box">
+            <h4> Recommended Chemical</h4>
+            <p>{{ chemical }}</p>
+        </div>
+
+        <!-- Advice -->
+        <div class="info-box">
+            <h4> Expert Advice</h4>
+            <p>{{ advice }}</p>
+        </div>
+
+        <!-- Button -->
+        <a href="{{ url_for('detect') }}" class="try-btn">
+            Try Another Image
+        </a>
+
+    </div>
+</section>
+{% endblock %}
